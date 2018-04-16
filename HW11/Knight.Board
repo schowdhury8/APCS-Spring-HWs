@@ -1,0 +1,28 @@
+    Shayan Chowdhury
+    APCS2 pd2
+    HW11 -- Get On the.Bus
+    2018-02-28
+
+Step-by-Step:
+1) Starting state (position) is at the top left of the grid.
+2) Check for the number of knights on the board. If the counter equals n^2 then return false.
+3) Make a move.
+4) If the next move is impossible then revert back to the original state (back to Step 3).
+5) Otherwise, if another knight is already occupying that state then revert back to the original state (back to Step 3).
+6) Otherwise, place a knight at this state and then go back to step 2. 
+
+Explanation: 
+Taking a page out of QueenBoard's implementation, the starting position of the first knight will be placed on the top right 
+most state (position) of the grid. The base case of this recursive algorithm could possibly be to check whether the number of 
+knights placed throughout the board equals its total capacity. Next, the knight has to make a move. After consulting with a few 
+of my classmates at the Dojo, we settled on using an array of size 8 consisting on translation coordinates for each of the 
+possible 8 moves. Next for each move, we have to check whether the move is legal. We decided that the legality of a move 
+is based on whether the new state has valid coordinates (within the grid boundaries) and whether or not a knight is already 
+occupying that state, in that order (boolean short circuiting). If the move is legal, then place a knight on the new state 
+and then repeat the original steps in making another move. However, if either or those conditions are not met, then that move 
+is illegal and the recursive loop for that specific move is over. The same steps are then repeated for the next move and so on. 
+
+This connection may not be entirely plausible but it seemed to me like the recursive loop for each move went down a sort of 
+"rabbit hole of recursion" and reminded me a lot of the merge sort algorithm that we worked on a few weeks ago where each 
+smaller set of the larger one went down its own splitting calls before it could move onto other calls and then merging them 
+all. 

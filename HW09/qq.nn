@@ -1,0 +1,44 @@
+Shayan Chowdhury
+APCS2 pd2
+HW09 -- Yaaasss Queens
+2018-02-26
+
+|Q| |   |Q| |  | |Q|   | |Q|
+|Q| |   | |Q|  |Q| |   | |Q|
+
+|Q| |Q|   | | |Q|
+| | | |   |Q| | |
+| |Q| |   | |Q| |
+
+In both a 2x2 and a 3x3 grid, it is impossible for there to be 2 or 3 queens respectively in positions where they are 
+unable to attack each other since each queen must have at least 2 adjacent spaces in one direction and one in the other 
+from another queen.
+
+| | |Q| |
+|Q| | | |
+| | | |Q|
+| |Q| | |
+
+However, this seems to change in all grids that have dimensions greater than 3x3 as seen above in the 4x4 grid. So far,
+it seems to me that the only possible solution for a 4x4 grid would be the one above (excluding rotations and symmetry).
+
+To prove that it would work for any grid larger than 4x4, let's look to a classic chess board with an 8x8 grid to solve 
+the initial problem of the 8 queens who cannot attack each other we started in class.
+
+| | | | | | |Q| | |
+|Q| | | | | | | | |
+| | | | | |Q| | | |
+| |Q| | | | | | | |
+| | | | | | | | |Q|
+| | |Q| | | | | | |
+| | | | | | | |Q| |
+| | | | |Q| | | | |
+
+Likewise, it is most definitely possible to place 8 queens on a 8x8 grid so that they cannot attack each other. 
+
+Although it takes a much longer time (possibly exponential given the different combinations of moves based on the size), 
+an interesting experiment would be to test for which square grid sizes this does may work (apart from 2 and 3), if there are 
+any to begin with. I had an interesting discussion with a few classmates at the Dojo yesterday and they seemed quite sure that
+it would work for any larger number, which I agree with. Another possible experiment would be to test how fast a computer would be 
+able to find the possible variations of different ways to place 8 queens on a 8x8 grid since a mere mortal like me took nearly 30 
+whole minutes to figure just one out. 
