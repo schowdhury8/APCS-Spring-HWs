@@ -1,0 +1,37 @@
+Shayan Chowdhury
+APCS2 pd2
+HW41 -- A Tree Grows in 251
+2018-04-30 M
+
+First of all, in order (get it?) to create a unique binary tree, one would have to be given at least two traversals of the tree, since only one 
+could account for multiple different trees. 
+
+If one is given a pre-order and post-order transversal, then this rule of thumb applies: if a node X precedes a node Y in the post-order but 
+also comes after Y in the pre-order, then X must be a child of Y. Think about it, in pre-order the child node is always traversed after the 
+parent node and the opposite appears in post-order.
+
+Given this, one could figure out the children for each node, and through recursive calls, a whole tree can be constructed (until there are 
+no more nodes left).
+
+To test this out:
+
+Pre-Order: [1, 2, 3, 4, 5, 6, 7]
+
+            36 32 26 33 43 40 54
+            26 33 32 40 54 43 36
+
+Post-Order: [3, 4, 2, 6, 7, 5, 1]
+
+Using this, we can recursively construct this tree:
+(I'm no artist, but here goes.)
+
+      1  
+    /   \    
+   2     5    
+  / \   / \  
+ 3   4 6   7 
+
+Wait never mind, I am...?
+
+For in-order, I haven't been able to nail down a single algorithm, but I look forward to finding out others' insights during class and in 
+the Dojo.
